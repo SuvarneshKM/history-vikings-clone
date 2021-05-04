@@ -1,13 +1,23 @@
 import styled from "styled-components";
 
 const Login = (props) => {
-    return (
-        <Container>
-            <Content>
-                <BgImage />
-            </Content>
-        </Container>
-    );
+  return (
+    <Container>
+      <Content>
+        <CTA>
+          <VikingsLogo src="/images/vikings.png" alt="" />
+          <Description>
+            Ragnar Lothbrok, a legendary Norse hero, 
+            is a mere farmer who rises up to become a 
+            fearless warrior and commander of the Viking 
+            tribes with the support of his equally ferocious family.
+          </Description>
+        </CTA>
+        <BgImage />
+      </Content>
+      <HistoryLogo src="/images/history.svg" alt="" />
+    </Container>
+  );
 };
 
 const Container = styled.section`
@@ -37,7 +47,7 @@ const BgImage = styled.div`
   background-position: top;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url("/images/login-background.jpg");
+  background-image: linear-gradient(rgba(0, 0, 10, 0.80), rgba(0, 0, 10, 0.80)), url("/images/login-background.jpg");
   position: absolute;
   top: 0;
   right: 0;
@@ -45,4 +55,34 @@ const BgImage = styled.div`
   z-index: -1;
 `;
 
+const CTA = styled.div`
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const HistoryLogo = styled.img`
+position: absolute;
+right: 2px;
+bottom: 2px;
+max-width: 75px;
+width: 100%;
+`;
+
+const Description = styled.p`
+  color: #fff;
+  font-size: 15px;
+  margin: 0 0 24px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
+`;
+
+const VikingsLogo = styled.img`
+  max-width: 600px;
+  margin-bottom: 20px;
+  display: inline-block;
+  vertical-align: bottom;
+  width: 100%;
+`;
 export default Login;
