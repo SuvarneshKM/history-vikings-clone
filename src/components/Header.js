@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import styled from "styled-components";
+import styled from "styled-components"; 
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
@@ -65,28 +65,29 @@ const Header = (props) => {
         <Logo>
           <NavLogoSpan></NavLogoSpan>
         </Logo>
-      </NavDiv2>
+        </NavDiv2>
       {!userName ? (
         <Login onClick={handleAuth}>Login</Login>
       ) : (
         <>
-          <NavMenu>
-            <a>
-              <span>Shows</span>
-            </a>
-            <a>
-              <span>This Day In History</span>
-            </a>
-            <a>
-              <span>Schedule</span>
-            </a>
-            <a>
-              <span>Topics</span>
-            </a>
-            <a>
-              <span>Stories</span>
-            </a>
-          </NavMenu>
+          <NavUl>
+            <NavLi>
+              <NavA>Shows</NavA>
+            </NavLi>
+            <NavLi>
+              <NavA>This Day In History</NavA>
+            </NavLi>
+            <NavLi>
+              <NavA>Schedule</NavA>
+            </NavLi>
+            <NavLi>
+              <NavA>Topics</NavA>
+            </NavLi>
+            <NavLi>
+              <NavA>Stories</NavA>
+            </NavLi>
+          </NavUl>
+          
           <SignOut>
             <UserImg src={userPhoto} alt={userName} />
             <DropDown>
@@ -258,59 +259,97 @@ const NavLogoSpan = styled.span`
     }
 `;
 
-const NavMenu = styled.div`
-  align-items: center;
-  display: flex;
-  flex-flow: row nowrap;
-  height: 100%;
-  justify-content: flex-end;
-  margin: 0px;
-  padding: 0px;
-  position: relative;
-  margin-right: auto;
-  margin-left: 25px;
-  a {
+const NavUl = styled.ul`
+    list-style: none;
+    -webkit-flex-grow: 1;
+    -moz-flex-grow: 1;
+    flex-grow: 1;
+    -ms-flex-positive: 1;
+    @media (min-width: 1025px) {
     display: flex;
+    -webkit-box-align: center;
+    -moz-box-align: center;
+    box-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-align-items: center;
+    -o-align-items: center;
     align-items: center;
-    padding: 0 12px;
+    -ms-flex-align: center;
+    -webkit-transition: opacity 0.1s ease-in-out, visibility 0 ease-in-out 0.1s;
+    -moz-transition: opacity 0.1s ease-in-out, visibility 0 ease-in-out 0.1s;
+    transition: opacity 0.1s ease-in-out, visibility 0 ease-in-out 0.1s;
+    }
+    @media (min-width: 1025px) and (max-width: 1280px) {
+    font-size: 14px;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+    visibility: hidden;
+    height: 0;
+    }
+    @media (max-width: 767px) {
+    display: none;
+    }
+`;
+
+const NavLi = styled.li`
+    display: list-item;
+    text-align: -webkit-match-parent;
+    @media (min-width: 1440px) {
+    position: relative;
+    padding: 0 20px;
+    }
+    @media (min-width: 1025px) {
+    position: relative;
+    padding: 0 6px;
+    }
+`;
+
+const NavA = styled.a`
+    color: #000;
     font-size: 16px;
     text-transform: capitalize;
     font-weight: 600;
-    span {
-      color: #000;
-      letter-spacing: 1.42px;
-      line-height: 1.08;
-      padding: 2px 0px;
-      white-space: nowrap;
-      position: relative;
-      cursor: pointer;
-      &:before {
-        background-color: rgb(249, 249, 249);
-        border-radius: 0px 0px 4px 4px;
-        bottom: -6px;
-        content: "";
-        height: 2px;
-        left: 0px;
-        opacity: 0;
-        position: absolute;
-        right: 0px;
-        transform-origin: left center;
-        transform: scaleX(0);
-        transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
-        visibility: hidden;
-        width: auto;
-      }
+    text-decoration: none;
+    @media (min-width: 1440px) {
+    padding: 0px 20px;
+    position: relative;
     }
-  }
-  @media (max-width: 768px) {
-    display: none;
-  }
+    @media (min-width: 1025px) {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: #000;
+    display: block;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    }
+    @media (min-width: 1120px) and (max-width: 1439px) {
+    padding: 8px 10px;
+    letter-spacing: -0.02em;
+    }
+    @media (max-width: 1120px) and (min-width: 767px) {
+    font-size: 14px;
+    padding: 8px 5px;
+    }
+    &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: transparent;
+    transition: all 0.4s ease-out 0.1s;
+    }
 `;
+
 
 const Login = styled.a`
   background-color: rgba(0, 0, 0, 0.6);
   padding: 8px 16px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: 1.5px;
   border: 1px solid #f9f9f9;
   border-radius: 4px;

@@ -32,7 +32,7 @@ const Container = styled.main`
   min-height: calc(100vh - 250px);
   overflow-x: hidden;
   display: block;
-  top: 65px;
+  top: 0px;
   &:after {
     background-color: #000 
       no-repeat fixed;
@@ -62,6 +62,12 @@ const ImgDiv = styled.div`
     @media (min-width: 1025px) {
     height: 64vh;
     }
+    @media (min-width: 1600px) {
+    height: 72vh;
+    }
+    @media (min-width: 768px) and (max-width: 1024px) {
+    height: 360px;
+}
     `;
 
 const ImgHome = styled.img`
@@ -207,10 +213,8 @@ const HeroA = styled.a`
     transition: all 0.3s ease-out;
     color: black;
     text-decoration: none;
-    -webkit-any-link {
-    color: -webkit-link;
-    cursor: pointer;
-    text-decoration: underline;
+    &:hover {
+    opacity: 0.6;
 }
 `;
 

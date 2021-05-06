@@ -3,6 +3,7 @@ import Login from "./components/Login";
 import Header from "./components/Header";
 import "./App.css";
 import Home from "./components/Home";
+import InternalNav from "./components/InternalNav";
 // import Detail from "./components/Detail";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <InternalNav />
       </Router>
     </div>
   );
