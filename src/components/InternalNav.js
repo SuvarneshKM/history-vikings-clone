@@ -46,7 +46,6 @@ const Nav = styled.nav`
     padding: 0 16px;
     margin: 0 auto;
     width: 100%;
-    display: block;
 `;
 
 const NavUl = styled.ul`
@@ -60,15 +59,33 @@ const NavUl = styled.ul`
 `;
 
 const NavLi = styled.li`
-    margin-right: 32px;
-    position: relative;
     @media (max-width: 767px) {
     margin-right: 0;
+    position: relative; 
+    }
     position: relative;
-}
 `;
 
 const NavA = styled.a`
+    &.selected {
+    background-color: transparent;
+    font-weight: 600;
+    color: #eb0028;
+    pointer-events: none;
+    &::after{
+    width: 30px;
+    height: 4px;
+    background-color: #ff124d;
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-out;
+    box-sizing: inherit;
+    }
+    }
+
     background-color: transparent;
     font-weight: 600;
     max-width: 200px;
@@ -84,6 +101,25 @@ const NavA = styled.a`
     align-items: center;
     transition: all 0.5s ease-out;
     text-decoration: none;
+    cursor: pointer;
+    &:after {
+    width: 0;
+    height: 4px;
+    background-color: #ff124d;
+    content: '';
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.3s ease-out;
+    box-sizing: inherit;
+    }
+    &:hover:after {
+        width: 30px;
+    }
+    
+
+
     @media (max-width: 767px) {
     font-size: 14px;
     height: 58px;
@@ -96,7 +132,12 @@ const NavA = styled.a`
 `;
 
 const NavSpan = styled.span`
-
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    max-height: 2.4em;
+    overflow: hidden;
+    color: #000;
 `;
 
 export default InternalNav
