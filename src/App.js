@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import "./App.css";
 import Home from "./components/Home";
 import InternalNav from "./components/InternalNav";
+import AboutSeries from "./components/AboutSeries";
 // import Detail from "./components/Detail";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           </Route>
         </Switch>
         <InternalNav />
+        <AboutSeries />
       </Router>
       <br />
       <br />
