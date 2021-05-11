@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import db from '../firebase';
+import InternalNav from './InternalNav';
+import AboutSeries from './AboutSeries';
 
 function Home() {
 
@@ -8,10 +10,11 @@ function Home() {
         <Container>
             <HeroDiv>
                 <ImgDiv>
-                    <ImgHome src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2019/10/vikings-S6-desktop-2048x1152.jpg?w=1440" />
+                    <ImgHome src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2015/09/Vikings-s6B-2048x1152-primary-16x9-1.jpg?w=1440" />
                 </ImgDiv>
                 <HeroTextDiv>
                     <HeroH1>Vikings</HeroH1>
+                    <HeroStrong>New Season Saturday, June 5 at 8/7c</HeroStrong>
                     <HeroStrong />
                     <HeroUl>
                         <HeroLi>
@@ -23,6 +26,8 @@ function Home() {
                     </HeroUl>
                 </HeroTextDiv>
             </HeroDiv>
+            <InternalNav />
+            <AboutSeries />
         </Container>
     )
 }

@@ -3,9 +3,6 @@ import Login from "./components/Login";
 import Header from "./components/Header";
 import "./App.css";
 import Home from "./components/Home";
-import InternalNav from "./components/InternalNav";
-import AboutSeries from "./components/AboutSeries";
-// import Detail from "./components/Detail";
 
 function App() {
   return (
@@ -20,25 +17,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        <InternalNav />
-        <AboutSeries />
       </Router>
-      <br />
-      <br />
-
-      <br />
-
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
 
     </div>
   );
