@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import styled from "styled-components"; 
+import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { auth, provider } from "../firebase";
@@ -65,7 +65,7 @@ const Header = (props) => {
         <Logo>
           <NavLogoSpan></NavLogoSpan>
         </Logo>
-        </NavDiv2>
+      </NavDiv2>
       {!userName ? (
         <Login onClick={handleAuth}>Login</Login>
       ) : (
@@ -87,7 +87,7 @@ const Header = (props) => {
               <NavA>Stories</NavA>
             </NavLi>
           </NavUl>
-          
+
           <SignOut>
             <UserImg src={userPhoto} alt={userName} />
             <DropDown>

@@ -7,19 +7,19 @@ const AboutSeries = () => {
             <DivArticle>
                 <MainArticle>
                     <AboutH2>
-                    About the Series
+                        About the Series
                     </AboutH2>
                     <AboutContainer>
                         <AboutP>
-                        Bjorn Ironside has ambitions for the Kingdom of Kattegat, 
-                        he dreams of peace and prosperity, 
-                        but the fates have a different plan for the new King. 
-                        A threat is looming, an enemy is resurgent–so much more ruthless than the rest. 
-                        Lagertha too has dreams, 
-                        to bury her sword and return to the simple life. 
-                        But as enemy forces gather, 
-                        Bjorn and Lagertha will rise to the challenge, 
-                        because they are Viking heroes and can never surrender.
+                            Bjorn Ironside has ambitions for the Kingdom of Kattegat,
+                            he dreams of peace and prosperity,
+                            but the fates have a different plan for the new King.
+                            A threat is looming, an enemy is resurgent–so much more ruthless than the rest.
+                            Lagertha too has dreams,
+                            to bury her sword and return to the simple life.
+                            But as enemy forces gather,
+                            Bjorn and Lagertha will rise to the challenge,
+                            because they are Viking heroes and can never surrender.
                         </AboutP>
                     </AboutContainer>
                 </MainArticle>

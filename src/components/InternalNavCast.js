@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import React from 'react'
+import React from 'react';
+import { Link } from "react-router-dom";
+import Home from "./Home";
 
 const InternalNavCast = () => {
     return (
@@ -7,23 +9,25 @@ const InternalNavCast = () => {
             <Nav>
                 <NavUl>
                     <NavLi>
-                        <NavA>
-                        <NavSpan>about</NavSpan>
-                        </NavA>
+                        <Link to={'Home'}>
+                            <NavA>
+                                <NavSpan>about</NavSpan>
+                            </NavA>
+                        </Link>
                     </NavLi>
                     <NavLi>
                         <NavA>
-                        <NavSpan>Episodes</NavSpan>
+                            <NavSpan>Episodes</NavSpan>
                         </NavA>
                     </NavLi>
                     <NavLi>
                         <NavA className='selected'>
-                        <NavSpan>Cast</NavSpan>
+                            <NavSpan>Cast</NavSpan>
                         </NavA>
                     </NavLi>
                     <NavLi>
                         <NavA>
-                        <NavSpan>Photos</NavSpan>
+                            <NavSpan>Photos</NavSpan>
                         </NavA>
                     </NavLi>
                 </NavUl>

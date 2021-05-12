@@ -14,18 +14,9 @@ function Cast() {
                     <HeroH1>Vikings</HeroH1>
                     <HeroStrong>New Season Saturday, June 5 at 8/7c</HeroStrong>
                     <HeroStrong />
-                    <HeroUl>
-                        <HeroLi>
-                            <HeroA href="https://play.history.com/shows/vikings">
-                                <HeroSpan>6</HeroSpan>
-                                Seasons
-                            </HeroA>
-                        </HeroLi>
-                    </HeroUl>
                 </HeroTextDiv>
             </HeroDiv>
             <InternalNavCast />
-            <AboutSeries />
         </Container>
     )
 }
