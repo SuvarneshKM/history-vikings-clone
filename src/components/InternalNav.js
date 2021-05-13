@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from 'react'
-import Cast from "./Cast";
 import { Link } from "react-router-dom";
 
 const InternalNav = () => {

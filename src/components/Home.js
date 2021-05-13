@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import db from '../firebase';
 import InternalNav from './InternalNav';
 import AboutSeries from './AboutSeries';
 
