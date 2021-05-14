@@ -166,9 +166,7 @@ const Div1 = styled.div`
     width: 100%;
     display: block;
     margin: 0 auto;
-    display: inline-block;
     vertical-align: top;
-    width: calc(100% - 300px - 16px - 5px);
     }
 `;
 
