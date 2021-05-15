@@ -21,7 +21,7 @@ function App() {
           <Route path="/cast">
             <Cast />
           </Route>
-          <Route path="/detail">
+          <Route path="/detail/:id">
             <Detail />
           </Route>
         </Switch>

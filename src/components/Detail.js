@@ -1,8 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import db from '../firebase';
 import InternalNavCast from './InternalNavCast';
 
-function Detail() {
+
+const Detail = () => {
+    const { id } = useParams();
+    const [casts, setCast] = useState()
+
+    useEffect(() => {
+        //grab the cast info from db
+        db.collection("cast")
+            .doc(id)
+            .get()
+            .then((doc) => {
+                if (doc.exists) {
+                    //save the cast data
+                    setCast(doc.data());
+                } else {
+                    //redirect to home page
+                }
+            })
+    }, [])
 
     return (
         <Container>
@@ -19,30 +39,25 @@ function Detail() {
                     <HeaderA href="">Cast</HeaderA>
                 </HeaderH>
             </HeaderH1>
-            <DivArt>
-                <div>
-                    <ArtFigure>
-                        <ArtImg src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                    </ArtFigure>
-                    <Articles>
-                        <DetailHeader>
-                            <h1>
-                                <Strongs>Ragnar</Strongs>
-                                <Smalls>Played by Travis Fimmel</Smalls>
-                            </h1>
-                        </DetailHeader>
-                        <PS>
-                            Ragnar Lothbrok is a restless warrior and family man
-                            who longs to find and explore new countries across the sea.
-                            His goal is to settle his own people to thrive on rich new farm
-                            lands. Now that he is King, his ambition to raid new kingdoms
-                            remains unquenchable, not least because he claims to be an
-                            ancestor of the Norse god Odin–the god of slain warriors,
-                            but also the god of eternal curiosity.
-            </PS>
-                    </Articles>
-                </div>
-            </DivArt>
+            { casts && (
+                <DivArt>
+                    <div>
+                        <ArtFigure>
+                            <ArtImg src={casts.img} alt />
+                        </ArtFigure>
+                        <Articles>
+                            <DetailHeader>
+                                <h1>
+                                    <Strongs>{casts.name}</Strongs>
+                                    <Smalls>{casts.played_by}</Smalls>
+                                </h1>
+                            </DetailHeader>
+                            <PS>{casts.details}</PS>
+                        </Articles>
+                    </div>
+                </DivArt>
+            )}
+
         </Container>
     )
 }

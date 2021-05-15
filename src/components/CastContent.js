@@ -8,7 +8,7 @@ import { selectCast } from '../features/cast/castSlice'
 
 const CastContent = () => {
     const cast = useSelector(selectCast);
-    console.log("this is cast", cast);
+    
     return (
         <ContentDiv>
             <HeaderH1>
@@ -21,8 +21,8 @@ const CastContent = () => {
                     <UlTile>
                         {cast &&
                             cast.map((casts) => (
-                        <LiTile>
-                            <Link to={'Detail'}>
+                        <LiTile key={casts.id}>
+                            <Link to={`/detail/${casts.id}`}>
                                 <ATile>
                                     <ImgContainer>
                                         <ImgTag src={casts.img} alt />
