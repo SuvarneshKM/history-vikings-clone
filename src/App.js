@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import "./App.css";
 import Home from "./components/Home";
 import Cast from "./components/Cast";
+import Detail from "./components/Detail";
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route path="/cast">
             <Cast />
+          </Route>
+          <Route path="/detail">
+            <Detail />
           </Route>
         </Switch>
       </Router>

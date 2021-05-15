@@ -1,7 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { selectCast } from '../features/cast/castSlice'
+
+
 
 const CastContent = () => {
+    const cast = useSelector(selectCast);
+    console.log("this is cast", cast);
     return (
         <ContentDiv>
             <HeaderH1>
@@ -12,116 +19,23 @@ const CastContent = () => {
             <Div1>
                 <DivTile>
                     <UlTile>
+                        {cast &&
+                            cast.map((casts) => (
                         <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
+                            <Link to={'Detail'}>
+                                <ATile>
+                                    <ImgContainer>
+                                        <ImgTag src={casts.img} alt />
+                                    </ImgContainer>
+                                    <DetailsDiv>
+                                        <DetailsStrong>{casts.name}</DetailsStrong>
+                                        <DetailsSmall>{casts.played_by}</DetailsSmall>
+                                    </DetailsDiv>
+                                </ATile>
+                            </Link>
                         </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
-                        <LiTile>
-                            <ATile href="cucek.in">
-                                <ImgContainer>
-                                    <ImgTag src="https://cropper.watch.aetnd.com/cdn.watch.aetnd.com/sites/2/2016/10/vikings_season4_cast_ragnar_16_9.jpg?w=548" alt />
-                                </ImgContainer>
-                                <DetailsDiv>
-                                    <DetailsStrong>Ragnar</DetailsStrong>
-                                    <DetailsSmall>Played by Travis Fimmel</DetailsSmall>
-                                </DetailsDiv>
-                            </ATile>
-                        </LiTile>
+                        ))
+                        }
                     </UlTile>
                 </DivTile>
             </Div1>

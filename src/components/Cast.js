@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import InternalNavCast from './InternalNavCast';
 import CastContent from './CastContent';
+import db from '../firebase';
+import { useDispatch } from 'react-redux';
+import { setCast } from '../features/cast/castSlice';
+
 
 function Cast() {
+    const dispatch = useDispatch();
 
+    useEffect(() => {
+        db.collection("cast").onSnapshot((snapshot) => {
+            let tempCast = snapshot.docs.map((doc) => {
+                return { id: doc.id, ...doc.data() }
+            })
+            dispatch(setCast(tempCast));
+        })
+    }, [])
     return (
         <Container>
             <HeroDiv>
