@@ -8,7 +8,7 @@ const InternalNavCast = () => {
             <Nav>
                 <NavUl>
                     <NavLi>
-                        <Link to={'Home'}>
+                        <Link to={'/home'}>
                             <NavA>
                                 <NavSpan>about</NavSpan>
                             </NavA>

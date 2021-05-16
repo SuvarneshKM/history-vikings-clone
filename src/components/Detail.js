@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import db from '../firebase';
 import InternalNavCast from './InternalNavCast';
@@ -36,7 +36,9 @@ const Detail = () => {
             <InternalNavCast />
             <HeaderH1>
                 <HeaderH>
-                    <HeaderA href="">Cast</HeaderA>
+                    <Link to={'/cast'}>
+                    <HeaderA>Cast</HeaderA>
+                    </Link>
                 </HeaderH>
             </HeaderH1>
             { casts && (
@@ -189,10 +191,10 @@ const Strongs = styled.strong`
 `;
 
 const Smalls = styled.small`
-    margin-left: 5px;
-    font-size: 0.762em;
+    margin-left: 15px;
+    font-size: 0.5em;
     vertical-align: bottom;
-    line-height: 1.1em;
+    line-height: 2em;
 `;
 
 const PS = styled.p`
